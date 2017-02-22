@@ -107,6 +107,7 @@
 }
 .icon-account_circle-grey {
 	@include icon(account_circle-grey);
+	color: $loginPageDarkGrey;
 }
 .icon-add {
 	@include icon(add);
@@ -147,6 +148,7 @@
 }
 .icon-lock-grey {
 	@include icon(lock-grey);
+	color: $loginPageDarkGrey;
 }
 .icon-logout {
 	@include icon(logout);

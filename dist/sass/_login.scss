@@ -1,0 +1,110 @@
+@import "custom-variables";
+@import "default-clases";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,cyrillic-ext');
+
+.login-container {
+	@extend %flex-row;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	height: 100vh;
+	padding: 0 1.5em;
+	background: url("../img/bg-320.jpg") no-repeat center center;
+	background-size: cover;	
+	
+	@media (min-width: 480px) {
+		background: url("../img/bg-1024.jpg") no-repeat center center;
+		background-size: cover;
+	}
+
+	.login-form {
+		width: 290px;
+		height: 330px;
+		padding: 5.5em 2.3em 4.5em; 
+		background: $bodyBg;
+		border-radius: 8px;
+		box-shadow: 0px 5px 16.17px 4.83px rgba(0, 0, 0, 0.08);
+		
+		@media (min-width: 480px) {
+			width: 344px;
+			padding: 5em;
+		}
+
+		.login-row {
+			@extend %flex-row;
+			justify-content: space-between; 
+			
+			& + .login-row {
+				margin-top: 2em;
+			}
+			
+			.icon {
+				font-size: 2.6em;
+			}
+			
+			.form-control {
+				width: 190px;
+				border-bottom: 1px solid $loginPageDarkGrey;
+				padding: .65em 0;
+				font-size: 1.8em;
+				color: $loginPageGrey;
+			}
+		}
+
+		.login-btn {
+			width: 100%;
+			display: inline-block;
+			line-height: 2.5em;
+			margin: 2.23em 0 1.67em;
+			background: $generalColor;
+			color: #fff;
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.8em;
+			font-weight: 700;
+			text-transform: uppercase;
+			border-radius: 9px;
+		}
+
+		.save-pw {
+			@extend %flex-row;
+			justify-content: center;
+			align-items: center;
+			
+			label {
+				font-size: 1.4em;
+				color: $loginPageGrey;
+			}	
+			input[type="checkbox"]{
+				display: none; 
+
+				& + label{
+					cursor: pointer;
+					&::before{
+						content: '';
+						display: inline-block;
+						width: 18px;
+						height: 18px;
+						background: #fff;
+						border-radius: 1px; 
+						margin-right: 15px;
+						border: 2px solid $loginPageDarkGrey;
+						vertical-align: middle;
+					}
+				}
+				&:checked{
+					& + label{
+						&::before{
+							background: url("../img/checkbox-checked-bg.png") no-repeat center center;						
+						}
+					}
+				}
+			}	
+		}
+
+	}	
+}
+
+
+
