@@ -403,7 +403,7 @@ button {
     @media (min-width: 1024px) {
       .task-wrap + .task-wrap {
         margin-top: 5em; } }
-  @media (min-width: 1024px) {
+  @media (min-width: 1180px) {
     .task-wrap {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
