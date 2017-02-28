@@ -20,15 +20,15 @@
 	}
 
 	.login-form {
-		width: 290px;
-		height: 330px;
+		max-width: 290px; 
+		width: 100%;
 		padding: 5.5em 2.3em 4.5em; 
 		background: $bodyBg;
 		border-radius: 8px;
 		box-shadow: 0px 5px 16.17px 4.83px rgba(0, 0, 0, 0.08);
 		
 		@media (min-width: 480px) {
-			width: 344px;
+			max-width: 344px;
 			padding: 5em;
 		}
 
@@ -39,13 +39,17 @@
 			& + .login-row {
 				margin-top: 2em;
 			}
+
+			.login-icon{
+				align-self: center;
+			}
 			
 			.icon {
 				font-size: 2.6em;
 			}
 			
 			.form-control {
-				width: 190px;
+				width: 80%;
 				border-bottom: 1px solid $loginPageDarkGrey;
 				padding: .65em 0;
 				font-size: 1.8em;
@@ -55,13 +59,13 @@
 
 		.login-btn {
 			width: 100%;
-			display: inline-block;
-			line-height: 2.5em;
+			display: inline-block;			
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.8em;
+			padding: .6em 1em;
 			margin: 2.23em 0 1.67em;
 			background: $generalColor;
 			color: #fff;
-			font-family: 'Roboto', sans-serif;
-			font-size: 1.8em;
 			font-weight: 700;
 			text-transform: uppercase;
 			border-radius: 9px;

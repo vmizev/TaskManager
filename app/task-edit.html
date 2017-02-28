@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Index Page</title>
+	<title>Edit Task Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -201,7 +201,37 @@
 	</div>
 	<!-- MAIN END -->
 
+	<!-- EDIT TASK START -->
+	<div class="overlay"></div>
 
+	<div class="edit-task">
+		<div class="container">
+		<div class="close-edit"></div>
+			<div class="title">
+				<span>Новая задача</span>
+			</div>
+			<div class="input-group flex-container">
+				<div class="task-bell">
+					<span class="icon icon-bell"></span>
+					<span>Оповестить за </span>
+				</div>
+				<input type="time" name="task-time" id="task-time">
+				<input type="date" name="task-date" id="task-date">
+			</div>
+			<div class="textarea-wrap">
+				<textarea name="task-text" id="task-text"></textarea>
+				<label for="task-text">Ваша задача</label>
+				<div class="symbol-count">
+					<span class="count">0</span>
+					<span class="max-count">/1000</span>
+				</div>
+			</div>
+			<div class="edit-task-btn-wrap">
+				<button class="edit-task-btn">Добавить</button>
+			</div>
+		</div>
+	</div>
+	<!-- EDIT TASK END -->	
 
 </body>
 </html>

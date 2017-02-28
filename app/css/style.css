@@ -649,6 +649,167 @@ button {
     .to-do-time {
       font-size: 1.4em; } }
 
+.overlay {
+  background: rgba(0, 0, 0, 0.83);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.edit-task {
+  background-color: #fff;
+  width: 100%;
+  padding: 5em 0;
+  height: auto;
+  z-index: 99999;
+  position: fixed;
+  bottom: 0; }
+  @media (min-width: 1024px) {
+    .edit-task {
+      min-height: 50vh; } }
+  @media (max-height: 710px) {
+    .edit-task {
+      top: 0;
+      overflow: auto; } }
+  .edit-task .close-edit {
+    position: absolute;
+    top: 7%;
+    right: 7%;
+    z-index: 989;
+    background: transparent;
+    border: none;
+    color: transparent;
+    height: 27px;
+    width: 27px;
+    display: none;
+    cursor: pointer; }
+    @media (max-height: 710px) {
+      .edit-task .close-edit {
+        display: block; } }
+    .edit-task .close-edit::before {
+      content: '';
+      display: inline-block;
+      top: 50%;
+      width: 30px;
+      height: 2px;
+      background: red;
+      position: absolute;
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+    .edit-task .close-edit::after {
+      content: '';
+      display: inline-block;
+      top: 50%;
+      width: 30px;
+      height: 2px;
+      background: red;
+      position: absolute;
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+  .edit-task .title {
+    font-size: 1.8em;
+    color: #757575;
+    margin-bottom: 4em; }
+  .edit-task .input-group {
+    width: 100%;
+    margin-bottom: 4em; }
+    .edit-task .input-group.flex-container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      @media (min-width: 1024px) {
+        .edit-task .input-group.flex-container {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+              -ms-flex-direction: row;
+                  flex-direction: row; } }
+  .edit-task .icon-bell {
+    font-size: 1.8em;
+    color: #00a2f4;
+    margin-right: 1.3em; }
+  .edit-task .task-bell {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.6em;
+    color: #424242;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .edit-task input {
+    font-size: 3em;
+    margin-top: 2em;
+    padding-left: 2.3em; }
+    @media (min-width: 1024px) {
+      .edit-task input {
+        margin-top: 0;
+        padding-left: 2em; } }
+  .edit-task .textarea-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%; }
+    .edit-task .textarea-wrap textarea {
+      border-bottom: 1px solid #9d9d9d;
+      width: 100%;
+      max-width: 710px;
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2;
+      margin-bottom: 4em;
+      color: #424242; }
+      .edit-task .textarea-wrap textarea:focus {
+        border-color: #00a2f4; }
+        .edit-task .textarea-wrap textarea:focus + label {
+          color: #00a2f4; }
+    .edit-task .textarea-wrap label {
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1;
+      font-size: 1.4em;
+      color: #424242; }
+    .edit-task .textarea-wrap .symbol-count {
+      -webkit-box-ordinal-group: 4;
+      -webkit-order: 3;
+          -ms-flex-order: 3;
+              order: 3;
+      text-align: right;
+      max-width: 710px;
+      margin-bottom: 7em; }
+  @media (min-width: 740px) {
+    .edit-task .edit-task-btn-wrap {
+      text-align: right; } }
+  .edit-task .edit-task-btn-wrap .edit-task-btn {
+    font-family: 'sf_ui_textsemibold';
+    font-size: 2.4em;
+    background: #00a2f4;
+    padding: .625em 1.5em;
+    color: #fff;
+    width: 100%;
+    -webkit-border-radius: .34em;
+            border-radius: .34em; }
+    @media (min-width: 740px) {
+      .edit-task .edit-task-btn-wrap .edit-task-btn {
+        width: auto;
+        padding: .625em 3.3em; } }
+
 .user-nav, .toggle-task-type .toggle-task-list, .today-day, .task .task-header, .task .task-content-wrap .time-row, .task .task-content-wrap .task-text-row, .task .task-content-wrap .task-edit-row, .info-block, .login-container, .login-container .login-form .login-row, .login-container .login-form .save-pw {
   display: -webkit-box;
   display: -webkit-flex;
@@ -694,8 +855,8 @@ button {
       background: url("../img/bg-1024.jpg") no-repeat center center;
       background-size: cover; } }
   .login-container .login-form {
-    width: 290px;
-    height: 330px;
+    max-width: 290px;
+    width: 100%;
     padding: 5.5em 2.3em 4.5em;
     background: #fff;
     -webkit-border-radius: 8px;
@@ -704,7 +865,7 @@ button {
             box-shadow: 0px 5px 16.17px 4.83px rgba(0, 0, 0, 0.08); }
     @media (min-width: 480px) {
       .login-container .login-form {
-        width: 344px;
+        max-width: 344px;
         padding: 5em; } }
     .login-container .login-form .login-row {
       -webkit-box-pack: justify;
@@ -713,10 +874,15 @@ button {
               justify-content: space-between; }
       .login-container .login-form .login-row + .login-row {
         margin-top: 2em; }
+      .login-container .login-form .login-row .login-icon {
+        -webkit-align-self: center;
+            -ms-flex-item-align: center;
+                    -ms-grid-row-align: center;
+                align-self: center; }
       .login-container .login-form .login-row .icon {
         font-size: 2.6em; }
       .login-container .login-form .login-row .form-control {
-        width: 190px;
+        width: 80%;
         border-bottom: 1px solid #9f9f9f;
         padding: .65em 0;
         font-size: 1.8em;
@@ -724,12 +890,12 @@ button {
     .login-container .login-form .login-btn {
       width: 100%;
       display: inline-block;
-      line-height: 2.5em;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.8em;
+      padding: .6em 1em;
       margin: 2.23em 0 1.67em;
       background: #00a2f4;
       color: #fff;
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.8em;
       font-weight: 700;
       text-transform: uppercase;
       -webkit-border-radius: 9px;

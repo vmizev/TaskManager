@@ -359,7 +359,6 @@
 
 	@media (min-width: 1024px) {
 		margin-top: 0;
-		// margin-left: 5.4em; 
 		padding-top: 1.6em;
 	}
 	
@@ -407,3 +406,157 @@
 	}
 }
 
+// EDIT-TASK style
+.overlay{
+	background: rgba(0, 0, 0, .83);
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.edit-task{
+	background-color: #fff;
+	width: 100%;
+	padding: 5em 0;
+	height: auto;
+	z-index: 99999;
+	position: fixed;
+	bottom: 0;
+
+	@media(min-width: 1024px){
+		min-height: 50vh;
+	}
+	@media(max-height: 710px){
+		top: 0;
+		overflow: auto;
+	}
+
+	.close-edit{
+		position: absolute;
+		top: 7%;
+		right: 7%;
+		z-index: 989;
+		background: transparent;
+		border: none;
+		color: transparent;
+		height: 27px;
+		width: 27px; 
+		display: none;
+		cursor: pointer;
+
+		@media(max-height: 710px){
+			display: block;
+		}
+		&::before{ 
+			content: '';
+			display: inline-block;
+			top: 50%;
+			width: 30px;
+			height: 2px;
+			background: red;
+			position: absolute;
+			transform: rotate(-45deg);
+		}
+		&::after{
+			content: '';
+			display: inline-block;
+			top: 50%;
+			width: 30px;
+			height: 2px;
+			background: red;
+			position: absolute;
+			transform: rotate(45deg);
+		}		
+	}
+
+	.title {
+		font-size: 1.8em;
+		color: #757575;
+		margin-bottom: 4em;
+	}
+	.input-group{
+		width: 100%;
+		margin-bottom: 4em;
+		&.flex-container {
+			flex-direction: column;
+			@media(min-width: 1024px){
+				flex-direction: row;
+			}
+		}
+	}
+	.icon-bell{
+		font-size: 1.8em;
+		color: $generalColor;
+		margin-right: 1.3em;		
+	}
+	.task-bell{
+		display: flex;
+		font-size: 1.6em;
+		color: $editTaskText; 
+		align-items: center;
+	}
+	input{
+		font-size: 3em;
+		margin-top: 2em;
+		padding-left: 2.3em; 
+		@media(min-width: 1024px){
+			margin-top: 0;
+			padding-left: 2em; 
+		}
+	}
+	.textarea-wrap{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		
+		textarea{
+			border-bottom: 1px solid #9d9d9d;
+			width: 100%;
+			max-width: 710px;
+			order: 2;
+			margin-bottom: 4em;
+			color: $editTaskText; 
+
+			&:focus{
+				border-color: $generalColor;
+				& + label{
+					color: $generalColor;
+				}
+			}
+		}
+		label {
+			order: 1;
+			font-size: 1.4em;
+			color: $editTaskText;
+		}
+		.symbol-count{
+			order: 3; 
+			text-align: right;
+			max-width: 710px;
+			margin-bottom: 7em;
+		}
+	}
+	.edit-task-btn-wrap{
+		@media(min-width: 740px){
+			text-align: right;
+		}
+		.edit-task-btn{
+			font-family: 'sf_ui_textsemibold';
+			font-size: 2.4em;
+			background: $generalColor;
+			padding: .625em 1.5em;
+			color: #fff;
+			width: 100%;	
+			border-radius: .34em;	 	
+
+			@media(min-width: 740px){
+				width: auto;
+				padding: .625em 3.3em;
+			}
+		}		
+	}
+
+}
